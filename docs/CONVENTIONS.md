@@ -35,11 +35,15 @@ Structural rules below marked **(ArchUnit)** are enforced by the rule classes un
 - If a feature accepts file uploads, set `spring.servlet.multipart.*` limits explicitly for that feature's expected file sizes; do not rely on Spring Boot defaults.
 - Store binary file content in PostgreSQL as `bytea` and map it as a plain `byte[]` field. Do not add `@Lob` for ordinary uploaded files, because Hibernate maps `@Lob byte[]` to PostgreSQL large-object `oid`.
 - Local-only sample accounts or seed data should live behind `@Profile("local")`, usually in an idempotent `ApplicationRunner`. Never let local seeders run in production profiles.
+- Prefer `@ConfigurationProperties` over scattered `@Value` fields once a setting belongs to an app-owned namespace or has more than one value.
+- Name Spring binding annotations explicitly (`@PathVariable("id")`, `@RequestParam("q")`, `@Param("username")`) instead of relying on reflected parameter names **(ArchUnit)**.
 - Validate request bodies with Bean Validation (`@NotNull`, `@Size`, `@Email`, etc. on request models, `@Valid` on the controller parameter). `GlobalExceptionHandler` already handles `MethodArgumentNotValidException`.
 - Paginate list endpoints (`Page<T>`/`Pageable`), not `List<T>`. Spring Data's paging support is already auto-configured.
 - Use correct HTTP semantics for writes: `201 Created` with a `Location` header from creates, `204 No Content` from deletes, `PUT` for a full replace, `PATCH` for a partial update.
 - Mark read-only service methods `@Transactional(readOnly = true)`.
 - Prefer DTO projections for read-only repository requests, especially list and summary screens that do not need hydrated JPA entities.
+- Slow Hibernate queries are logged through the shared slow-query threshold in `application.yml`; tune the threshold per environment when load testing exposes different needs.
+- Virtual threads (`spring.threads.virtual.enabled=true`) are a supported opt-in for I/O-heavy apps on Java 25. Enable them deliberately, measure pinned-thread behavior, and set `spring.main.keep-alive=true` if scheduled or daemon-only work must keep the JVM alive.
 - Never return `null` collections from a service or repository; return an empty collection.
 - Keep service classes focused on transactions and business decisions — don't let unrelated helper logic accumulate there as private methods. Extract mapping (entity ↔ request/response), formatting, or other supporting logic into its own top-level class under `feature/` (for example `FeatureMapper`, constructor-injected like any other collaborator) once any of these is true: it needs an injected dependency, it's reused by more than one service, or it's grown past trivial one-to-one field assignment. Below that bar, a private method on the service is fine.
 

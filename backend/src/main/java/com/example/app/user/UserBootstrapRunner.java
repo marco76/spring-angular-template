@@ -2,7 +2,6 @@ package com.example.app.user;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -31,16 +30,13 @@ public class UserBootstrapRunner implements ApplicationRunner {
 
 	private final UserRepository userRepository;
 	private final PasswordEncoder passwordEncoder;
-	private final String bootstrapUsername;
-	private final String bootstrapPassword;
+	private final BootstrapAdminProperties bootstrapAdminProperties;
 
 	public UserBootstrapRunner(UserRepository userRepository, PasswordEncoder passwordEncoder,
-			@Value("${app.bootstrap-admin.username:}") String bootstrapUsername,
-			@Value("${app.bootstrap-admin.password:}") String bootstrapPassword) {
+			BootstrapAdminProperties bootstrapAdminProperties) {
 		this.userRepository = userRepository;
 		this.passwordEncoder = passwordEncoder;
-		this.bootstrapUsername = bootstrapUsername;
-		this.bootstrapPassword = bootstrapPassword;
+		this.bootstrapAdminProperties = bootstrapAdminProperties;
 	}
 
 	@Override
@@ -49,13 +45,13 @@ public class UserBootstrapRunner implements ApplicationRunner {
 		if (userRepository.count() > 0) {
 			return;
 		}
-		if (bootstrapUsername.isBlank() || bootstrapPassword.isBlank()) {
+		if (!bootstrapAdminProperties.hasCredentials()) {
 			log.warn("No users exist and app.bootstrap-admin.username/password are not set; "
 					+ "create the first admin account manually before signing in.");
 			return;
 		}
-		userRepository.save(new UserEntity(bootstrapUsername, passwordEncoder.encode(bootstrapPassword),
-				UserRole.ADMIN, true));
-		log.info("Created initial admin account '{}'.", bootstrapUsername);
+		userRepository.save(new UserEntity(bootstrapAdminProperties.username(),
+				passwordEncoder.encode(bootstrapAdminProperties.password()), UserRole.ADMIN, true));
+		log.info("Created initial admin account '{}'.", bootstrapAdminProperties.username());
 	}
 }

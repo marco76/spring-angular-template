@@ -33,7 +33,7 @@ flowchart LR
     Repos --> DB
     Controllers -. "exceptions" .-> ErrorHandler
     Security -. "access denied /\nunauthenticated" .-> ErrorHandler
-    ErrorHandler -. "ApiError JSON" .-> Interceptor
+    ErrorHandler -. "ApiError JSON" .-> ErrorInterceptor
 ```
 
 Backend responsibilities: business rules, security, persistence, and

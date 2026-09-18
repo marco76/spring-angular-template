@@ -5,6 +5,12 @@ spring:
     hibernate:
       ddl-auto: validate
     open-in-view: false
+    properties:
+      hibernate:
+        session:
+          events:
+            log:
+              LOG_QUERIES_SLOWER_THAN_MS: 300
   flyway:
     enabled: true
   servlet:
@@ -24,3 +30,7 @@ management:
     health:
       probes:
         enabled: true
+
+logging:
+  level:
+    org.hibernate.SQL_SLOW: INFO

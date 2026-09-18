@@ -50,13 +50,13 @@ public class UserController {
 	}
 
 	@PatchMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public UserResponse updateUser(@PathVariable Long id, @Valid @RequestBody UpdateUserRequest request) {
+	public UserResponse updateUser(@PathVariable("id") Long id, @Valid @RequestBody UpdateUserRequest request) {
 		return userService.updateUser(id, request);
 	}
 
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void deleteUser(@PathVariable Long id, Authentication authentication) {
+	public void deleteUser(@PathVariable("id") Long id, Authentication authentication) {
 		userService.deleteUser(id, authentication.getName());
 	}
 }
