@@ -1,0 +1,53 @@
+{
+  "name": "example-app",
+  "version": "0.0.1",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "ng lint",
+    "generate:api": "ng-openapi-gen"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^22.0.0",
+    "@angular/cdk": "^22.0.0",
+    "@angular/common": "^22.0.0",
+    "@angular/compiler": "^22.0.0",
+    "@angular/core": "^22.0.0",
+    "@angular/forms": "^22.0.0",
+    "@angular/material": "^22.0.0",
+    "@angular/platform-browser": "^22.0.0",
+    "@angular/router": "^22.0.0",
+    "rxjs": "^7.8.1",
+    "tslib": "^2.8.1",
+    "zone.js": "^0.16.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^22.0.0",
+    "@angular/cli": "^22.0.0",
+    "@angular/compiler-cli": "^22.0.0",
+    "@angular-eslint/builder": "^22.5.0",
+    "@angular-eslint/eslint-plugin": "^22.5.0",
+    "@angular-eslint/eslint-plugin-template": "^22.5.0",
+    "@angular-eslint/schematics": "^22.5.0",
+    "@angular-eslint/template-parser": "^22.5.0",
+    "@eslint/js": "^9.39.1",
+    "@types/jasmine": "^6.0.0",
+    "angular-eslint": "^22.5.0",
+    "eslint": "^9.39.1",
+    "karma": "^6.4.4",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-coverage": "^2.2.1",
+    "karma-jasmine": "^5.1.0",
+    "karma-jasmine-html-reporter": "^2.3.0",
+    "jasmine-core": "^5.4.0",
+    "ng-openapi-gen": "^1.0.5",
+    "prettier": "^3.7.4",
+    "typescript": "^6.0.0",
+    "typescript-eslint": "^8.49.0"
+  }
+}

@@ -1,0 +1,90 @@
+/*
+ * FT-inspired editorial palette for generated projects that want a warmer,
+ * publication-style starter UI. Applied when Angular sets data-theme="ft".
+ */
+:root[data-theme='ft'] {
+  --app-font-body: Inter, 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --app-font-heading:
+    'Financier Display', 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino,
+    'Times New Roman', serif;
+  --app-text: #0d1117;
+  --app-text-muted: #66605c;
+  --app-caption: #990f3d;
+  --app-danger: #cc0000;
+  --app-background: #fff1e5;
+  --app-page-background: #fff1e5;
+  --app-content-background: linear-gradient(180deg, #fff3e8 0%, #f7e5d4 100%);
+  --app-surface: #fff9f2;
+  --app-surface-alt: #faeede;
+  --app-card-background: #fff9f2;
+  --app-card-border: #e6d9c9;
+  --app-header-background: #fff1e5;
+  --app-header-border: #d9cdbb;
+  --app-menu-text: #66605c;
+  --app-nav-text: #0d1117;
+  --app-nav-icon: #66605c;
+  --app-nav-active-background: #f6e5ea;
+  --app-nav-active-accent: #990f3d;
+  --app-sidenav-background: #fffaf3;
+  --app-sidenav-border: #c7b7a4;
+  --app-sidenav-shadow: 1px 0 0 rgba(153, 15, 61, 0.1), 12px 0 28px rgba(97, 70, 42, 0.08);
+  --app-link: #0f5499;
+  --app-code-background: #faeede;
+  --app-selection-background: #f6e5ea;
+  --app-selection-text: #0d1117;
+  --app-radius-sm: 2px;
+  --app-radius-md: 2px;
+  --app-radius-lg: 2px;
+  --app-shadow-sm: none;
+  --app-shadow-md: none;
+  --app-shadow-header: none;
+  --app-brand-shadow: none;
+  --app-top-rule: #990f3d;
+
+  --mat-sys-primary: #990f3d;
+  --mat-sys-on-primary: #ffffff;
+  --mat-sys-primary-container: #f6e5ea;
+  --mat-sys-on-primary-container: #3d0016;
+  --mat-sys-primary-fixed: #f6e5ea;
+  --mat-sys-primary-fixed-dim: #e4b8c7;
+  --mat-sys-on-primary-fixed: #29000e;
+  --mat-sys-on-primary-fixed-variant: #3d0016;
+  --mat-sys-inverse-primary: #f0b7c8;
+  --mat-sys-surface-tint: #990f3d;
+
+  --mat-sys-secondary: #0f5499;
+  --mat-sys-on-secondary: #ffffff;
+  --mat-sys-secondary-container: #d9e8f7;
+  --mat-sys-on-secondary-container: #072847;
+  --mat-sys-secondary-fixed: #d9e8f7;
+  --mat-sys-secondary-fixed-dim: #a7c8e8;
+  --mat-sys-on-secondary-fixed: #031b32;
+  --mat-sys-on-secondary-fixed-variant: #072847;
+
+  --mat-sys-tertiary: #0b6b3a;
+  --mat-sys-on-tertiary: #ffffff;
+  --mat-sys-tertiary-container: #d9efe4;
+  --mat-sys-on-tertiary-container: #06361e;
+  --mat-sys-tertiary-fixed: #d9efe4;
+  --mat-sys-tertiary-fixed-dim: #a9d8c0;
+  --mat-sys-on-tertiary-fixed: #032513;
+  --mat-sys-on-tertiary-fixed-variant: #06361e;
+
+  --mat-sys-background: #fff1e5;
+  --mat-sys-on-background: #0d1117;
+  --mat-sys-surface: #fff9f2;
+  --mat-sys-on-surface: #0d1117;
+  --mat-sys-surface-variant: #faeede;
+  --mat-sys-on-surface-variant: #66605c;
+  --mat-sys-surface-bright: #fffaf3;
+  --mat-sys-surface-dim: #e6d9c9;
+  --mat-sys-surface-container-lowest: #fffaf3;
+  --mat-sys-surface-container-low: #fff9f2;
+  --mat-sys-surface-container: #faeede;
+  --mat-sys-surface-container-high: #f2e4d3;
+  --mat-sys-surface-container-highest: #e6d9c9;
+  --mat-sys-outline: #8a7f73;
+  --mat-sys-outline-variant: #d9cdbb;
+  --mat-sys-inverse-surface: #1a1a1a;
+  --mat-sys-inverse-on-surface: #f5ede0;
+}

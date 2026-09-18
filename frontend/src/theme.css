@@ -1,0 +1,88 @@
+/*
+ * Brand palette: deep navy as the primary surface/action color, with a
+ * warm amber-orange reserved for accents (tertiary token, highlighted
+ * chips, active affordances). Overrides the M3 system tokens the prebuilt
+ * Material theme defines, so every Material component retints
+ * consistently from this one file instead of per-component overrides.
+ *
+ * Imported once from styles.css. Both the basic and minimal UI modes
+ * (see create-project.sh) share this file untouched.
+ */
+:root {
+  --app-font-body: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --app-font-heading: var(--app-font-body);
+  --app-text: #101820;
+  --app-text-muted: #414b54;
+  --app-caption: #7b8792;
+  --app-danger: #8b1d1d;
+  --app-background: #f5f7f9;
+  --app-page-background: #e8edf2;
+  --app-content-background: linear-gradient(180deg, #f3f6f9 0%, #e8edf2 100%);
+  --app-surface: #ffffff;
+  --app-surface-alt: #f0f3f5;
+  --app-card-background: #ffffff;
+  --app-card-border: #d8e0e7;
+  --app-header-background: #ffffff;
+  --app-header-border: rgba(16, 24, 32, 0.08);
+  --app-menu-text: #41505e;
+  --app-nav-text: #273645;
+  --app-nav-icon: #6b7680;
+  --app-nav-active-background: #eef4fa;
+  --app-nav-active-accent: #e2631e;
+  --app-sidenav-background: #ffffff;
+  --app-sidenav-border: #b9c5d1;
+  --app-sidenav-shadow: 1px 0 0 rgba(15, 43, 70, 0.08), 14px 0 32px rgba(16, 24, 32, 0.1);
+  --app-link: #0f2b46;
+  --app-code-background: #e3e7ea;
+  --app-selection-background: #d8e3ee;
+  --app-selection-text: #101820;
+  --app-brand-shadow: 0 8px 18px rgba(226, 99, 30, 0.22);
+  --app-top-rule: transparent;
+
+  --mat-sys-primary: #0f2b46;
+  --mat-sys-on-primary: #ffffff;
+  --mat-sys-primary-container: #d8e3ee;
+  --mat-sys-on-primary-container: #0a2036;
+  --mat-sys-primary-fixed: #d8e3ee;
+  --mat-sys-primary-fixed-dim: #9fb7cc;
+  --mat-sys-on-primary-fixed: #071b2c;
+  --mat-sys-on-primary-fixed-variant: #0a2036;
+  --mat-sys-inverse-primary: #9fc4e8;
+  --mat-sys-surface-tint: #0f2b46;
+
+  --mat-sys-secondary: #4d6278;
+  --mat-sys-on-secondary: #ffffff;
+  --mat-sys-secondary-container: #dce6ef;
+  --mat-sys-on-secondary-container: #1c2b38;
+  --mat-sys-secondary-fixed: #dce6ef;
+  --mat-sys-secondary-fixed-dim: #a9bccb;
+  --mat-sys-on-secondary-fixed: #16232d;
+  --mat-sys-on-secondary-fixed-variant: #1c2b38;
+
+  --mat-sys-tertiary: #e2631e;
+  --mat-sys-on-tertiary: #ffffff;
+  --mat-sys-tertiary-container: #ffe0cc;
+  --mat-sys-on-tertiary-container: #4a2100;
+  --mat-sys-tertiary-fixed: #ffe0cc;
+  --mat-sys-tertiary-fixed-dim: #ffb787;
+  --mat-sys-on-tertiary-fixed: #351500;
+  --mat-sys-on-tertiary-fixed-variant: #4a2100;
+
+  --mat-sys-background: #f5f7f9;
+  --mat-sys-on-background: #101820;
+  --mat-sys-surface: #f5f7f9;
+  --mat-sys-on-surface: #101820;
+  --mat-sys-surface-variant: #dfe6ec;
+  --mat-sys-on-surface-variant: #414b54;
+  --mat-sys-surface-bright: #f5f7f9;
+  --mat-sys-surface-dim: #d7dbdf;
+  --mat-sys-surface-container-lowest: #ffffff;
+  --mat-sys-surface-container-low: #f0f3f5;
+  --mat-sys-surface-container: #eaedf0;
+  --mat-sys-surface-container-high: #e3e7ea;
+  --mat-sys-surface-container-highest: #dde1e5;
+  --mat-sys-outline: #6b7680;
+  --mat-sys-outline-variant: #c3ccd3;
+  --mat-sys-inverse-surface: #1c2833;
+  --mat-sys-inverse-on-surface: #eef2f5;
+}

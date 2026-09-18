@@ -1,0 +1,88 @@
+/*
+ * GL-inspired corporate theme: clean white surfaces, black serif display
+ * typography, teal accents, and warm taupe actions.
+ */
+:root[data-theme='gl'] {
+  --app-font-body: Inter, 'Avenir Next', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --app-font-heading: Georgia, 'Times New Roman', Times, serif;
+  --app-text: #111111;
+  --app-text-muted: #5d5f61;
+  --app-caption: #18a89a;
+  --app-danger: #a33b3b;
+  --app-background: #ffffff;
+  --app-page-background: #f6f7f6;
+  --app-content-background: linear-gradient(180deg, #ffffff 0%, #f2f4f3 100%);
+  --app-surface: #ffffff;
+  --app-surface-alt: #f7f8f7;
+  --app-card-background: #ffffff;
+  --app-card-border: #dedede;
+  --app-header-background: #ffffff;
+  --app-header-border: #dddddd;
+  --app-menu-text: #3a3d3f;
+  --app-nav-text: #303436;
+  --app-nav-icon: #18a89a;
+  --app-nav-active-background: #edf8f6;
+  --app-nav-active-accent: #18a89a;
+  --app-sidenav-background: #ffffff;
+  --app-sidenav-border: #d9dddd;
+  --app-sidenav-shadow: 1px 0 0 rgba(17, 17, 17, 0.05), 14px 0 32px rgba(17, 17, 17, 0.08);
+  --app-link: #087f75;
+  --app-code-background: #f0f2f1;
+  --app-selection-background: #d6f4ef;
+  --app-selection-text: #111111;
+  --app-radius-sm: 10px;
+  --app-radius-md: 16px;
+  --app-radius-lg: 24px;
+  --app-shadow-sm: 0 1px 2px rgba(17, 17, 17, 0.06);
+  --app-shadow-md: 0 14px 34px rgba(17, 17, 17, 0.1);
+  --app-shadow-header: 0 1px 0 rgba(17, 17, 17, 0.08);
+  --app-brand-shadow: none;
+  --app-top-rule: #111111;
+
+  --mat-sys-primary: #b19b84;
+  --mat-sys-on-primary: #111111;
+  --mat-sys-primary-container: #eee6df;
+  --mat-sys-on-primary-container: #3d3025;
+  --mat-sys-primary-fixed: #eee6df;
+  --mat-sys-primary-fixed-dim: #d7c6b6;
+  --mat-sys-on-primary-fixed: #2b2119;
+  --mat-sys-on-primary-fixed-variant: #3d3025;
+  --mat-sys-inverse-primary: #d7c6b6;
+  --mat-sys-surface-tint: #b19b84;
+
+  --mat-sys-secondary: #18a89a;
+  --mat-sys-on-secondary: #ffffff;
+  --mat-sys-secondary-container: #d8f4ef;
+  --mat-sys-on-secondary-container: #073c37;
+  --mat-sys-secondary-fixed: #d8f4ef;
+  --mat-sys-secondary-fixed-dim: #9eddd4;
+  --mat-sys-on-secondary-fixed: #032923;
+  --mat-sys-on-secondary-fixed-variant: #073c37;
+
+  --mat-sys-tertiary: #111111;
+  --mat-sys-on-tertiary: #ffffff;
+  --mat-sys-tertiary-container: #eeeeee;
+  --mat-sys-on-tertiary-container: #111111;
+  --mat-sys-tertiary-fixed: #eeeeee;
+  --mat-sys-tertiary-fixed-dim: #d2d2d2;
+  --mat-sys-on-tertiary-fixed: #111111;
+  --mat-sys-on-tertiary-fixed-variant: #2f2f2f;
+
+  --mat-sys-background: #ffffff;
+  --mat-sys-on-background: #111111;
+  --mat-sys-surface: #ffffff;
+  --mat-sys-on-surface: #111111;
+  --mat-sys-surface-variant: #f2f4f3;
+  --mat-sys-on-surface-variant: #5d5f61;
+  --mat-sys-surface-bright: #ffffff;
+  --mat-sys-surface-dim: #e6e8e7;
+  --mat-sys-surface-container-lowest: #ffffff;
+  --mat-sys-surface-container-low: #fbfbfb;
+  --mat-sys-surface-container: #f6f7f6;
+  --mat-sys-surface-container-high: #ecefed;
+  --mat-sys-surface-container-highest: #e1e5e3;
+  --mat-sys-outline: #757b7b;
+  --mat-sys-outline-variant: #ccd1d0;
+  --mat-sys-inverse-surface: #111111;
+  --mat-sys-inverse-on-surface: #ffffff;
+}

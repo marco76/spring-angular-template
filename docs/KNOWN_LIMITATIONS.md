@@ -1,0 +1,12 @@
+# Known Limitations
+
+- Authentication is still scaffold-level HTTP Basic, not a production session or token flow. Any endpoint not explicitly listed as `permitAll()` in `SecurityConfig` requires Basic credentials.
+- The header's account area (`AppShellComponent`, `frontend/src/app/core/auth.service.ts`) includes a compact username/password form that verifies credentials through `GET /api/auth/me`. Successful credentials are stored only as an in-memory Basic authorization header for the current browser tab and are attached to `/api/**` requests by `authCredentialsInterceptor`; refreshing the page drops them. The sign-out button clears this in-memory header, but it cannot revoke credentials the browser may have cached from a native Basic Auth prompt.
+- Users are DB-backed (`app_user`, managed via `GET/POST/PATCH/DELETE /api/admin/users`); the starter accounts `admin / admin` and `user / user` are only demo credentials seeded for local development (`application-local.yml`'s `app.bootstrap-admin.*` plus `LocalDemoUserSeeder`). Other environments start with zero users — set `app.bootstrap-admin.username`/`password` (for example via env vars) before first boot, or create the first admin manually, then manage the rest through the admin API.
+- Backend has a handful of example tests (health, admin access, error handling) and the frontend has one (`health.service.spec.ts`); they prove the test setup works but cover almost nothing beyond the starter endpoints.
+- Regenerating the API client (`./scripts/generate-api.sh`) requires a running backend; there is no CI drift check yet between the committed client and the live contract.
+- H2 local mode is convenient but PostgreSQL remains the production truth.
+- Two Jackson major versions are on the classpath at once: Jackson 3 (`tools.jackson.*`, what Spring Boot 4's `JacksonAutoConfiguration` wires by default) and classic Jackson 2 (`com.fasterxml.jackson.*`, pulled in transitively by other dependencies). Do not inject `com.fasterxml.jackson.databind.ObjectMapper` expecting it to be Spring's auto-configured bean — it isn't (see `docs/DECISIONS.md`, "Centralize Exception Handling").
+- Testcontainers-backed tests should be tagged with `@Tag("docker")`. If Docker is blocked in an agent or CI sandbox, run backend checks with `SKIP_DOCKER_TESTS=true ./scripts/check-backend.sh`.
+- No feature flag system is included; OpenFeature was removed until a project needs one (see `docs/DECISIONS.md`).
+- No Playwright smoke test is included yet; `scripts/smoke.sh` uses HTTP checks only.

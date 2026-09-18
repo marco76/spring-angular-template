@@ -1,0 +1,11 @@
+.DS_Store
+target/
+node_modules/
+dist/
+.angular/
+.idea/
+.run/
+.vscode/
+*.log
+postgres-data/
+frontend/openapi.json
